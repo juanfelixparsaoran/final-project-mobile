@@ -17,16 +17,25 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-Mobile.startApplication('C:\\Users\\095085\\Downloads\\FINALPROJECTS2010161213281-220627-220853\\FINAL PROJECTS\\MOBILE\\app-debug.apk', 
-    false)
+WebUI.callTestCase(findTestCase('Login/TC - Login Valid'), [:], FailureHandling.STOP_ON_FAILURE)
 
-Mobile.setText(findTestObject('Login/android.widget.EditText - Username'), 'wipeqy12', 0)
+Mobile.tap(findTestObject('Object Repository/Deposit/android.widget.ImageButton'), 0)
 
-Mobile.setEncryptedText(findTestObject('Login/android.widget.EditText - Password'), '+Jz/9fvjCZLCuvZS9lPRbw==', 0)
+Mobile.tap(findTestObject('Transfer/android.widget.CheckedTextView - Make a Transfer'), 0)
 
-Mobile.tap(findTestObject('Login/android.widget.Button - LOGIN'), 0)
+Mobile.tap(findTestObject('Object Repository/Transfer/android.widget.TextView - Tabungan 1'), 0)
 
-Thread.sleep(1000)
+Mobile.tap(findTestObject('Object Repository/Transfer/android.widget.CheckedTextView - foya 1'), 0)
 
-Mobile.verifyElementExist(findTestObject('Login/android.widget.TextView - Dashboard'), 0)
+Mobile.setText(findTestObject('Object Repository/Transfer/android.widget.EditText - Transfer Amount'), '10', 0)
+
+Mobile.tap(findTestObject('Object Repository/Transfer/android.widget.TextView - foya 1 (10.00)'), 0)
+
+Mobile.tap(findTestObject('Object Repository/Transfer/android.widget.CheckedTextView - Tabungan 1 (99900.00)'), 0)
+
+Mobile.tap(findTestObject('Object Repository/Transfer/android.widget.Button - Confirm Transfer'), 0)
+
+Mobile.getText(findTestObject('Object Repository/Transfer/android.widget.TextView - foya 1 (0.00)'), 0)
+
+Mobile.getText(findTestObject('Object Repository/Transfer/android.widget.TextView - Tabungan 1 (99910.00)'), 0)
 
