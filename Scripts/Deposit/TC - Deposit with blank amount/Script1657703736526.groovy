@@ -17,11 +17,15 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-Mobile.setText(findTestObject('Login/android.widget.EditText - Username'), 'wipeqy1', 0)
+WebUI.callTestCase(findTestCase('Login/TC - Login Valid'), [:], FailureHandling.STOP_ON_FAILURE)
 
-Mobile.setEncryptedText(findTestObject('Login/android.widget.EditText - Password'), '+Jz/9fvjCZLCuvZS9lPRbw==', 0)
+Mobile.tap(findTestObject('Object Repository/Deposit/android.widget.ImageButton'), 0)
 
-Mobile.tap(findTestObject('Login/android.widget.Button - LOGIN'), 0)
+Mobile.tap(findTestObject('Object Repository/Deposit/android.widget.CheckedTextView - Make a Deposit'), 0)
 
-Mobile.verifyElementExist(findTestObject('Login/android.widget.TextView - Bank App Demo'), 0)
+Mobile.setText(findTestObject('Object Repository/Deposit/android.widget.EditText - Enter Deposit Amount ()'), '', 0)
+
+Mobile.tap(findTestObject('Object Repository/Deposit/android.widget.Button - DEPOSIT'), 0)
+
+Mobile.verifyElementExist(findTestObject('Deposit/deposit_title_text'), 0)
 

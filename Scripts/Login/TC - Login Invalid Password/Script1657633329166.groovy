@@ -17,9 +17,6 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-Mobile.startApplication('C:\\Users\\095085\\Downloads\\FINALPROJECTS2010161213281-220627-220853\\FINAL PROJECTS\\MOBILE\\app-debug.apk', 
-    false)
-
 Mobile.setText(findTestObject('Login/android.widget.EditText - Username'), 'wipeqy12', 0)
 
 Mobile.setEncryptedText(findTestObject('Login/android.widget.EditText - Password'), 'RigbBhfdqOBGNlJIWM1ClA==', 0)

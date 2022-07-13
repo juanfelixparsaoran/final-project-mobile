@@ -17,11 +17,14 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-Mobile.setText(findTestObject('Login/android.widget.EditText - Username'), 'wipeqy1', 0)
+Mobile.startApplication('C:\\Users\\095085\\Downloads\\FINALPROJECTS2010161213281-220627-220853\\FINAL PROJECTS\\MOBILE\\app-debug.apk', 
+    false)
 
-Mobile.setEncryptedText(findTestObject('Login/android.widget.EditText - Password'), '+Jz/9fvjCZLCuvZS9lPRbw==', 0)
+if (usernameInvalid) {
+    WebUI.callTestCase(findTestCase('Login/TC - Login Invalid Username'), [:], FailureHandling.STOP_ON_FAILURE)
+} else {
+    WebUI.callTestCase(findTestCase('Login/TC - Login Invalid Password'), [:], FailureHandling.STOP_ON_FAILURE)
+}
 
-Mobile.tap(findTestObject('Login/android.widget.Button - LOGIN'), 0)
-
-Mobile.verifyElementExist(findTestObject('Login/android.widget.TextView - Bank App Demo'), 0)
+Mobile.closeApplication()
 

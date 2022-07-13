@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC - Deposit with blank amount</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>4762fc3f-331a-466c-9d3d-6d04092c54e0</testCaseGuid>
+</TestCaseEntity>
